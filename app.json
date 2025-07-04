@@ -2,6 +2,7 @@
   "expo": {
     "name": "target",
     "slug": "target",
+    "scheme": "target",
     "version": "1.0.0",
     "android": {
       "package": "com.whuanderson.target",
@@ -13,7 +14,11 @@
     },
     "ios": {
       "bundleIdentifier": "com.whuanderson.target",
-      "icon": "./assets/icon.png"      
-    }
+      "icon": "./assets/icon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font"
+    ]
   }
 }
