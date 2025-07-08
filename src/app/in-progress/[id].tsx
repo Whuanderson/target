@@ -1,7 +1,8 @@
 import { View } from "react-native";
-import { useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, router } from "expo-router";
 
 import { List } from "@/components/List";
+import { Button } from "@/components/Button";
 import { Progress } from "@/components/Progress";
 import { PageHeader } from "@/components/PageHeader";
 import { Transaction } from "@/components/Transaction";
@@ -41,7 +42,7 @@ const transactions = [
 export default function InProgress() {
   const params = useLocalSearchParams<{ id: string }>();
   return (
-    <View style={{ flex: 1, padding: 24, gap: 32 }}>
+    <View style={{ flex: 1, padding: 24, paddingBottom: 32 }}>
       <PageHeader
         title="Apple Watch"
         rightButton={{
@@ -56,7 +57,9 @@ export default function InProgress() {
         renderItem={({ item }) => (
           <Transaction data={item} onRemove={() => {}} />
         )}
+        emptyMessage="Nenhuma transação. Toque em nova transação para guardar seu primeiro dinheiro aqui."
       />
+      <Button title="Nova transação" onPress={()=> router.navigate(`/transaction/${params.id}`)} />
     </View>
   );
 }
