@@ -27,8 +27,8 @@ export default function Layout() {
   }
 
   return (
-    <Suspense fallback={<Loading />}> {/* esperar o ba de dados ser carregado */}
-      <SQLiteProvider databaseName="target.db" onInit={migrate} useSuspense>  {/* carrega io banco de dados para toda aplicação */}
+    <Suspense fallback={<Loading />}>
+      <SQLiteProvider databaseName="target.db" onInit={migrate} useSuspense> 
         <Stack
           screenOptions={{
             headerShown: false,
