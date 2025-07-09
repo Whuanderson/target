@@ -65,7 +65,7 @@ export default function Transaction() {
         />
 
         <Input
-          label="Motivo"
+          label="Motivo (opcional)"
           placeholder="Ex: Investir em CDB de 110% no banco XPTO"
           onChangeText={setObservation}
         />
